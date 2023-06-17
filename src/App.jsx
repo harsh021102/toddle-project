@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Dashboard from "./pages/Dashboard";
 function App() {
   return (
-    <div className="h-screen w-screen flex bg-grey-500">
+    <div className="h-screen w-screen flex flex-col gap-[1px] ">
       <NavBar/>
       <Routes>
         <Route path="/" element={<Dashboard/>}/>
