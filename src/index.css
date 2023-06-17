@@ -19,3 +19,7 @@ code {
   font-family: 'AVENIR';
   src: url('./static/fonts/AvenirNextRegular.otf');
 }
+@font-face {
+  font-family: 'AVENIR-BOLD';
+  src: url('./static/fonts/AvenirNextBold.otf');
+}

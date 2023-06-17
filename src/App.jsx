@@ -1,12 +1,19 @@
 import NavBar from "./components/NavBar";
 import { Route, Routes } from 'react-router-dom';
 import Dashboard from "./pages/Dashboard";
+import { useState } from "react";
+
 function App() {
+  const [showcard,setShowcard] = useState(false)
+  const toggleCreateBoardCard=()=> {
+    setShowcard(!showcard);
+  }
   return (
     <div className="h-screen w-screen flex flex-col gap-[1px] ">
-      <NavBar/>
+      <NavBar toggleCreateBoardCard={toggleCreateBoardCard} showcard={showcard}/>
       <Routes>
-        <Route path="/" element={<Dashboard/>}/>
+        <Route path="/" element={<Dashboard  toggleCreateBoardCard={toggleCreateBoardCard} showcard={showcard}/>}/>
+        <Route path="/posts" element={<YourPosts/>}/>
       </Routes>
     </div>
   );
