@@ -22,7 +22,7 @@ const CreateBoardCard = ({toggleCreateBoardCard,showcard}) => {
                 <input type="text" className='font-avenir text-[16px] leading-[22px] text-[#222222]  outline-none' placeholder="Enter Text"/>
             </div>
             <h1 className='mt-[40px] font-avenir-bold font-[700] text-[20px] leading-[28px] flex items-center text-black w-[174px] h-[28px]'>Select post colour</h1>
-            <h2 className='h-[20px] font-avenirfont-[500] text-[14px] leading-[20px] text-[#2B2B2B]'>Here are some templates to help you get started</h2>
+            <h2 className='h-[20px] font-avenir font-[500] text-[14px] leading-[20px] text-[#2B2B2B]'>Here are some templates to help you get started</h2>
             <div className='mt-[16px] w-[128.26px] h-[24.05px] flex items-start p-0 gap-[10.69px]'>
                 <button className='box-border w-[26px] h-[26px]
                 bg-[#A7F0F9] rounded-full'/>

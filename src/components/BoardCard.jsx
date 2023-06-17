@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { dots } from '../misc/ImagesAndIcons'
-import DropDown from './DropDown'
+import DropDown from './DropDownBoard'
+import DropDownBoard from './DropDownBoard'
 
 const BoardCard = () => {
     const [displayMenu,setDisplayMenu] = useState(false)
@@ -11,7 +12,7 @@ const BoardCard = () => {
             <h1 className="font-avenir font-[500] text-[14px] leading-[20px] flex items-center text-[#222222]">Earth Changes and Journeys</h1>
             <button className="w-[32px] h-[32px]" onClick={()=> setDisplayMenu(!displayMenu)}>
                 <img src={dots} alt="icon" />
-                <DropDown show={displayMenu}/>
+                <DropDownBoard show={displayMenu}/>
             </button>
         </div>
     )

@@ -9,5 +9,9 @@ import bookmark from '../static/images/bookmark.svg'
 import onlylogo from '../static/images/onlylogo.svg'
 import back from '../static/images/back.svg'
 import notebook from '../static/images/notebook.svg'
+import picture from '../static/images/picture.svg'
+import dotsmall from '../static/images/dots-small.svg'
+import testimage from '../static/images/testimage.jpg'
+import heart from '../static/images/heart.svg'
 
-export {toddlelogo,search,plusicon,dots,close,bin,pencil,bookmark,onlylogo,back,notebook};
+export {toddlelogo,search,plusicon,dots,close,bin,pencil,bookmark,onlylogo,back,notebook,picture,dotsmall,testimage,heart};

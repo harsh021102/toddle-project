@@ -14,7 +14,7 @@ function App() {
       <NavBar toggleCreateBoardCard={toggleCreateBoardCard} showcard={showcard}/>
       <Routes>
         <Route path="/" element={<Dashboard  toggleCreateBoardCard={toggleCreateBoardCard} showcard={showcard}/>}/>
-        <Route path="/posts" element={<YourPosts/>}/>
+        <Route path="/posts" element={<YourPosts toggleCreateBoardCard={toggleCreateBoardCard} showcard={showcard}/>}/>
       </Routes>
     </div>
   );

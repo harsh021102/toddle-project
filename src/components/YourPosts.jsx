@@ -3,21 +3,28 @@ import BoardCard from './BoardCard'
 import CreateButton from './CreateButton'
 import { useLocation } from 'react-router-dom';
 import { notebook } from '../misc/ImagesAndIcons';
+import CreatePostCard from './CreatePostCard';
+import PostCard from './PostCard';
 
-const YourPosts = () => {
+const YourPosts = ({toggleCreateBoardCard,showcard}) => {
   
-  const array = [8]
+  const array = [0]
   
   return (
+    <>
+    <CreatePostCard toggleCreateBoardCard={toggleCreateBoardCard} showcard={showcard}/>
     <div className='w-full h-full mt-[71px] bg-[#EBFCFF]'>
-        <div className='mt-[19px] mx-[48px] flex justify-between items-center'>
-          <h1 className='font font-avenir-bold font-[900] leading-[44px] text-[32px] flex items-center'>Your Posts</h1>
-          <CreateButton type={'post'}/>
+        <div className={array.length>0?`mt-[19px] mx-[48px] flex justify-end items-center`:`mt-[19px] mx-[48px] flex justify-between items-center`}>
+          {
+            array.length===0&&
+            <h1 className='font font-avenir-bold font-[900] leading-[44px] text-[32px] flex items-center'>Your Posts</h1>
+          }
+          <CreateButton toggleCreateBoardCard={toggleCreateBoardCard} showcard={showcard} type={'post'}/>
         </div>
         {
           array.length>0 && 
-          <section className="px-[71px] mt-[32px] h-[546px] border-2 border-black overflow-auto auto-rows-max grid grid-cols-1 md:grid-cols-3 md:grid-3 gap-y-[10px]">
-            <BoardCard/>
+          <section className="mt-[8px] px-[71px] h-[595px] overflow-auto auto-rows-max grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-[20px]">
+            <PostCard/>
           </section>
         }
         {
@@ -33,6 +40,7 @@ const YourPosts = () => {
           </section>
         }
     </div>
+    </>
   )
 }
 
