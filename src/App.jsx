@@ -2,6 +2,7 @@ import NavBar from "./components/NavBar";
 import { Route, Routes } from 'react-router-dom';
 import Dashboard from "./pages/Dashboard";
 import { useState } from "react";
+import YourPosts from "./components/YourPosts";
 
 function App() {
   const [showcard,setShowcard] = useState(false)
