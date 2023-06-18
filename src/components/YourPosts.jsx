@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import BoardCard from './BoardCard'
 import CreateButton from './CreateButton'
-import { useLocation } from 'react-router-dom';
 import { notebook } from '../misc/ImagesAndIcons';
 import CreatePostCard from './CreatePostCard';
 import PostCard from './PostCard';

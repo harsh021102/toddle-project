@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { close } from '../misc/ImagesAndIcons'
-import CreateBoardCardButton from './CreateBoardCardButton'
 import UploadImage from './UploadImage'
 import CreatePostButton from './CreatePostButton'
 

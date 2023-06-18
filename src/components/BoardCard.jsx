@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { dots } from '../misc/ImagesAndIcons'
-import DropDown from './DropDownBoard'
 import DropDownBoard from './DropDownBoard'
 
 const BoardCard = ({id,showcard,color,title,changeTitle,setBoardLength}) => {
