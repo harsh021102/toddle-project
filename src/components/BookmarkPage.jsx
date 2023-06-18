@@ -6,38 +6,37 @@ import { notebook } from '../misc/ImagesAndIcons';
 import CreatePostCard from './CreatePostCard';
 import PostCard from './PostCard';
 
-const YourPosts = ({toggleCreateBoardCard,showcard,title}) => {
-  
-  const [posts, setPosts] = useState([]);
-  const [likes, setLikes] = useState(0);
-  const [postLength,setPostLength] = useState(posts.length);
-  
-  useEffect(() => {
-    const storedPosts = JSON.parse(localStorage.getItem(title)) || [];
-    setPosts(storedPosts);
-  }, [postLength]);
+const BookmarkPage = () => {
 
+  const location = useLocation();
+  const path = location.pathname;
+  
+  const [bookmark,setBookmark] = useState([])
+
+  useEffect(() => {
+    const storedBookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+    setBookmark(storedBookmarks);
+  }, []);
+  
   return (
     <>
-    <CreatePostCard toggleCreateBoardCard={toggleCreateBoardCard} showcard={showcard} title={title} likes={likes} setLikes={setLikes} setPostLength={setPostLength}/>
     <div className='w-full h-full mt-[71px] bg-[#EBFCFF]'>
-        <div className={posts.length>0?`mt-[19px] mx-[48px] flex justify-end items-center`:`mt-[19px] mx-[48px] flex justify-between items-center`}>
-          {
-            posts.length===0&&
-            <h1 className='font font-avenir-bold font-[900] leading-[44px] text-[32px] flex items-center'>Your Posts</h1>
-          }
-          <CreateButton toggleCreateBoardCard={toggleCreateBoardCard} showcard={showcard} type={'post'}/>
+        <div className={bookmark.length>0?`mt-[19px] mx-[48px] flex justify-end items-center`:`mt-[19px] mx-[48px] flex justify-between items-center`}>
+        {
+        bookmark.length===0&&
+        <h1 className='font font-avenir-bold font-[900] leading-[44px] text-[32px] flex items-center'>Your Posts</h1>
+        }
         </div>
         {
-          posts.length>0 && 
+          bookmark.length>0 && 
           <section className="mt-[8px] px-[71px] h-[595px] overflow-auto auto-rows-max grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-[20px]">
             {
-              posts.map((post)=> {return <PostCard key={post.id} subject={post.subject} mind={post.mind} image={post.image} likes={likes} setLikes={setLikes} title={title}/>})
+              bookmark.map((book)=> {return <PostCard id={book.id} title={book.title} subject={book.subject} likes={book.likes} mind={book.mind} path={path}/>})
             }
           </section>
         }
         {
-          posts.length===0 && 
+          bookmark.length===0 && 
           <section className="flex justify-center items-center h-[546px] overflow-auto auto-rows-max">
             <div className='w-[500px] h-[546px] flex items-center justify-center'>
               <div className='w-[359px]  flex flex-col items-center justify-center'>
@@ -53,4 +52,4 @@ const YourPosts = ({toggleCreateBoardCard,showcard,title}) => {
   )
 }
 
-export default YourPosts
+export default BookmarkPage

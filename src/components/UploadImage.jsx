@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { picture } from "../misc/ImagesAndIcons";
 
-function UploadImage() {
+function UploadImage({image,setImage}) {
   const fileInputRef = useRef(null);
   const [file, setFile] = useState();
 
@@ -12,6 +12,7 @@ function UploadImage() {
   const handleFileSelect = (event) => {
     const file = event.target.files[0];
     setFile(URL.createObjectURL(event.target.files[0]))
+    setImage(file)
     console.log("Selected file:", file);
   };
 
